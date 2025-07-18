@@ -112,41 +112,87 @@
     /* Features Section */
     .features {
       display: flex;
+      justify-content: center; /* 居中 */
       gap: 2rem;
       margin: 4rem 0;
       flex-wrap: wrap;
-      justify-content: center;
     }
     .feature {
       background: #fff;
-      flex: 1 1 280px;
+      flex: 1 1 300px;
       padding: 2rem;
       border-radius: 8px;
-      box-shadow: 0 4px 20px rgb(0 0 0 / 0.08);
-      text-align: center; /* 文案居中 */
-      transition: box-shadow 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
+      transition: box-shadow 0.3s ease;
     }
     .feature:hover {
-      box-shadow: 0 8px 30px rgb(0 0 0 / 0.15);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     }
     .feature-icon {
       font-size: 3rem;
-      color: #f0c040;
+      color: #f0c040; /* 金色 */
       margin-bottom: 1rem;
     }
     .feature h3 {
       font-family: 'Montserrat', sans-serif;
       margin-bottom: 1rem;
       font-weight: 600;
-      color: #0b234a;
+      color: #0b234a; /* 稳重蓝 */
     }
     .feature p {
       font-size: 1rem;
       color: #555;
       line-height: 1.5;
+    }
+    /* New Section: Industry Insights */
+    .insights {
+      background: #fff;
+      padding: 3rem 2rem;
+      margin: 3rem 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 25px rgb(0 0 0 / 0.08);
+      color: #0b234a;
+    }
+    .insights h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+    .insights p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #444;
+      text-align: center;
+    }
+    /* New Section: AI Investment */
+    .ai-invest {
+      background: #f0f3f7;
+      padding: 3rem 2rem;
+      margin: 3rem 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 25px rgb(0 0 0 / 0.05);
+      color: #0b234a;
+    }
+    .ai-invest h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+    .ai-invest p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #444;
+      text-align: center;
     }
     /* About Team */
     .team {
@@ -408,6 +454,8 @@
     <div class="logo">US Smart Trading</div>
     <div class="nav-links">
       <a href="#features">Features</a>
+      <a href="#industry-insights">Industry Insights</a>
+      <a href="#ai-investment">AI Investment</a>
       <a href="#team">Team</a>
       <a href="#services">Services</a>
       <a href="#security">Security</a>
@@ -422,11 +470,11 @@
   <a href="#register" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Join Our Group</a>
 </section>
 
-<section id="features" class="features container" style="margin-top: 4rem;">
+<section id="features" class="features container" aria-label="Key Features">
   <div class="feature" role="region" aria-label="Market Forecasts">
     <div class="feature-icon" aria-hidden="true">📈</div>
     <h3>Market Forecasts</h3>
-    <p>Daily/weekly market research and technical & fundamental analysis to guide your trades.</p>
+    <p>Daily/weekly market research and technical &amp; fundamental analysis to guide your trades.</p>
   </div>
   <div class="feature" role="region" aria-label="Research Reports">
     <div class="feature-icon" aria-hidden="true">📊</div>
@@ -440,49 +488,51 @@
   </div>
 </section>
 
-<section id="team" class="team container">
-  <h2>Meet Our Team</h2>
+<section id="industry-insights" class="insights container" aria-label="Industry Insights">
+  <h2>Industry Insights</h2>
+  <p>Our team continuously analyzes market trends and industry shifts in consumer goods, technology, energy, and more. This allows us to identify emerging opportunities early and guide your investments with precision.</p>
+</section>
+
+<section id="ai-investment" class="ai-invest container" aria-label="AI Smart Investment">
+  <h2>AI-Powered Investment Assistance</h2>
+  <p>Leveraging cutting-edge AI algorithms, we optimize your portfolio allocation and risk control, ensuring balanced, intelligent, and adaptive investment strategies tailored to your style and goals.</p>
+</section>
+
+<section id="team" class="team container" aria-label="Our Team">
+  <h2>Meet Our Experts</h2>
   <div class="team-members">
     <div class="member">
-      <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Professor Zhang" />
-      <h4>Professor Zhang</h4>
+      <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Professor John Doe" />
+      <h4>Prof. John Doe</h4>
       <p>Lead Analyst & Founder</p>
     </div>
     <div class="member">
-      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Analyst Li" />
-      <h4>Analyst Li</h4>
-      <p>Senior Market Researcher</p>
+      <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Anna Smith" />
+      <h4>Anna Smith</h4>
+      <p>Senior Market Analyst</p>
     </div>
     <div class="member">
-      <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Strategist Wang" />
-      <h4>Strategist Wang</h4>
-      <p>Trading Strategist</p>
+      <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Mark Johnson" />
+      <h4>Mark Johnson</h4>
+      <p>Risk & Portfolio Manager</p>
     </div>
   </div>
 </section>
 
-<section id="services" class="services container">
-  <h2>Our Services</h2>
-  <ul class="service-list" role="list">
-    <li>Daily US stock recommendations with complete trading guides</li>
-    <li>Pre-market strategies and market trend forecasting</li>
-    <li>Detailed monthly and daily research reports</li>
-    <li>Risk management and trading education</li>
-    <li>AI-assisted portfolio construction and optimization</li>
+<section id="services" class="services container" aria-label="Services Provided">
+  <h2>What We Offer</h2>
+  <ul class="service-list">
+    <li>Daily & weekly market research reports</li>
+    <li>Technical & fundamental stock analysis</li>
+    <li>Pre-market trading strategies and forecasts</li>
+    <li>Short-term and long-term trading recommendations</li>
+    <li>Risk management and portfolio optimization</li>
+    <li>Trading training and unwinding services</li>
   </ul>
 </section>
 
-<section id="security" class="security container" aria-label="Security and Compensation Guarantee">
-  <p>All chat records are securely archived for 10 years and are open for SEC audits to ensure transparency. We guarantee no exaggeration. Should you experience losses following our strategies, the professor will provide full compensation based on verified trading records.</p>
-</section>
-
-<!-- Testimonial Carousel -->
-<section class="testimonials container" aria-label="Customer Testimonials">
+<section class="testimonials container" aria-label="Client Testimonials">
   <div class="testimonial-slide active">
-    "Joining this group was the best decision I made in my trading journey. The reports and signals helped me grow steadily."
-    <div class="testimonial-author">— Emily R.</div>
-  </div>
-  <div class="testimonial-slide">
     "Professional and trustworthy team. Their insights have made trading less stressful and more profitable."
     <div class="testimonial-author">— Michael S.</div>
   </div>
@@ -496,17 +546,23 @@
   </div>
 </section>
 
-<!-- Registration Form -->
+<section id="security" class="security" aria-label="Security and Compliance">
+  <p>
+    🔐 All chat records are securely archived for 10 years and can be audited by the SEC anytime.  
+    We promise transparency with no exaggeration. If you suffer losses following our strategies, our lead professor guarantees full compensation based on your verified trading records.
+  </p>
+</section>
+
 <section id="register" class="form-section container" aria-labelledby="register-title">
   <h2 id="register-title" style="text-align:center; color:#0b234a; margin-bottom:1.5rem;">Join Our Smart Trading Group</h2>
-  <form action="https://formspree.io/f/myylrjgj" method="POST">
+  <form action="https://formspree.io/f/myylrjgj" method="POST" aria-label="Registration Form">
     <label for="name">Full Name*</label>
     <input type="text" id="name" name="name" required placeholder="Your full name" />
     <label for="email">Email Address*</label>
     <input type="email" id="email" name="_replyto" required placeholder="your.email@example.com" />
     <label for="message">Additional Notes (optional)</label>
     <textarea id="message" name="message" rows="4" placeholder="Tell us anything you'd like..."></textarea>
-    <button type="submit" class="submit-btn">Register</button>
+    <button type="submit" class="submit-btn" aria-label="Submit Registration Form">Register</button>
   </form>
 
   <div class="button-group" style="margin-top: 1.5rem;">
@@ -542,7 +598,6 @@
     showSlide(current);
   });
 
-  // Auto rotate every 7 seconds
   setInterval(() => {
     current = (current === total - 1) ? 0 : current + 1;
     showSlide(current);
