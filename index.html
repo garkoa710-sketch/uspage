@@ -6,142 +6,186 @@
   <title>US Smart Trading Group</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Reset & base */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Open Sans', sans-serif; background: #fafafa; color: #333; line-height: 1.6; }
-    a { text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    :root {
-      --primary: #c49b25;
-      --dark: #1a2332;
-      --accent: #007bff;
-      --radius: 8px;
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      margin: 0;
     }
 
     header {
-      background: var(--dark);
+      background: #1a2332;
       color: #fff;
-      padding: 1rem 0;
+      padding: 1.5rem 1rem;
       text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    h1, h2 {
+      font-family: 'Montserrat', sans-serif;
     }
 
     .container {
-      max-width: 1000px;
-      margin: 0 auto;
+      max-width: 960px;
+      margin: auto;
       padding: 2rem 1rem;
     }
 
     .hero {
-      background: linear-gradient(rgba(26,35,50,0.7), rgba(26,35,50,0.7)),
-                  url('https://source.unsplash.com/1600x900/?stocks,finance') center/cover no-repeat;
+      background: url('https://source.unsplash.com/1600x900/?stock,trading') center/cover no-repeat;
       color: #fff;
       text-align: center;
       padding: 5rem 1rem;
-      border-radius: var(--radius);
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      background-blend-mode: darken;
+      background-color: rgba(0, 0, 0, 0.5);
     }
 
-    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; font-family: 'Montserrat', sans-serif; }
-    .hero p { font-size: 1.2rem; }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
 
     .section {
-      margin-top: 3rem;
+      margin-bottom: 2.5rem;
     }
 
     .section h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.8rem;
-      color: var(--dark);
+      font-size: 1.75rem;
       margin-bottom: 1rem;
-      border-left: 4px solid var(--primary);
+      border-left: 5px solid #c49b25;
       padding-left: 0.75rem;
     }
 
-    .highlight {
-      background: #fff8e1;
-      padding: 1rem;
-      border-left: 4px solid var(--primary);
-      margin: 1rem 0;
-      border-radius: var(--radius);
-    }
-
-    ul {
-      margin: 1rem 0;
-      padding-left: 1.5rem;
-    }
-
     ul li {
-      margin-bottom: 0.5rem;
+      margin: 0.5rem 0;
+    }
+
+    .highlight {
+      background: #fff3cd;
+      padding: 1rem;
+      border-left: 5px solid #c49b25;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+
+    form {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    form button {
+      padding: 0.75rem 1.5rem;
+      background: #28a745;
+      border: none;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #218838;
     }
 
     footer {
       text-align: center;
-      font-size: 0.875rem;
       padding: 2rem 1rem;
-      color: #888;
+      font-size: 0.9rem;
+      color: #777;
     }
-
-    .emoji { font-size: 1.2rem; margin-right: 0.5rem; }
   </style>
 </head>
 <body>
+
   <header>
     <h1>US Smart Trading Group</h1>
   </header>
 
   <main class="container">
     <section class="hero">
-      <h1>Welcome to the Smart US Stock Trading Group</h1>
-      <p>Start your intelligent investment journey today, guided by professionals.</p>
+      <h1>📈 Super Bull Market is Coming</h1>
+      <p>Join us now to seize the opportunity guided by experts</p>
     </section>
 
     <section class="section">
       <h2>📢 Breaking News</h2>
       <div class="highlight">
-        <strong>Goldman Sachs:</strong> The Fed will cut interest rates in September, and there will be three opportunities to cut interest rates this year.
-        <br><br>
-        <strong>We expect US stock investment to usher in a <span style="color: var(--accent);">super bull market</span>.</strong>
+        Goldman Sachs: The Fed will cut interest rates in September, and there will be three opportunities to cut interest rates this year. <br><br>
+        We expect US stock investment to usher in a <strong>super bull market</strong>.
       </div>
     </section>
 
     <section class="section">
-      <h2>📈 Why Join Us?</h2>
-      <p>Led by professors and professional analysts, our team provides:</p>
+      <h2>🔥 Our Strengths</h2>
       <ul>
-        <li>✅ Daily US stock recommendations & in-depth reports</li>
-        <li>✅ Buy/sell signals with step-by-step trading guidance</li>
-        <li>✅ Research insights by industry and trend</li>
-        <li>✅ Training, risk control & unwinding support</li>
+        <li>✔️ Daily stock picks with full trading guidance</li>
+        <li>✔️ Professional analysis and market insights</li>
+        <li>✔️ Industry research & AI-powered strategy</li>
+        <li>✔️ Trading education, risk control, and exit tips</li>
       </ul>
     </section>
 
     <section class="section">
       <h2>🛡️ Special Protection</h2>
-      <p>All chat records are stored for 10 years and can be audited by the SEC. If you follow our strategy and suffer losses, the professor will <strong>fully compensate</strong> based on trading records.</p>
+      <p>All chat records are saved for 10 years and can be audited by the SEC. If you suffer losses following our strategies, <strong>the professor will fully compensate</strong> based on trading records.</p>
     </section>
 
     <section class="section">
-      <h2>🧠 Group Service Overview</h2>
-      <ul>
-        <li>🔹 Daily/weekly market research & trend forecasts</li>
-        <li>🔹 Technical & fundamental analysis</li>
-        <li>🔹 In-depth industry reports (consumer, tech, energy, etc.)</li>
-        <li>🔹 Short-term and long-term trading recommendations</li>
-        <li>🔹 Accurate buy/sell signals and risk analysis</li>
-        <li>🔹 AI-assisted portfolio optimization</li>
-      </ul>
+      <h2>📲 Join Our Trading Group</h2>
+      <div class="btn-group">
+        <a href="YOUR_WHATSAPP_LINK" class="btn">Join WhatsApp Group</a>
+        <a href="YOUR_TELEGRAM_LINK" class="btn" style="background: #0088cc;">Join Telegram Group</a>
+      </div>
     </section>
 
     <section class="section">
-      <h2>🚀 Your Wealth Engine Starts Now</h2>
-      <p>Investing is about leveraging power without effort. Join us to build your AI-powered wealth engine and achieve stable returns under expert guidance.</p>
+      <h2>📝 Register for More Info</h2>
+      <!-- ✅ 建议换为 Google Form，如果收集数据 -->
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+        <textarea name="message" placeholder="Your message or trading experience"></textarea>
+        <button type="submit">Submit</button>
+      </form>
     </section>
   </main>
 
   <footer>
     &copy; 2025 US Smart Trading Group. All rights reserved.
   </footer>
+
 </body>
 </html>
