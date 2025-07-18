@@ -1,113 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Language" content="en" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>US Smart Trading Group</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet" />
   <style>
-    /* Reset & Base */
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:Roboto,sans-serif;background:#f7f9fc;color:#222;line-height:1.6;}
-    a{text-decoration:none;color:inherit;}
-    .container{max-width:1100px;margin:0 auto;padding:0 1rem;}
+    /* —— RESET & 基础 —— */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:Roboto,sans-serif; background:#f7f9fc; color:#222; line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
+    img { max-width:100%; display:block; }
 
-    /* Header */
-    header{background:#0b234a;color:#fff;padding:1rem;text-align:center;position:sticky;top:0;z-index:100;}
-
-    /* Hero */
-    .hero{margin:1rem 0;text-align:center;color:#fff;
-      background:linear-gradient(rgba(11,35,74,.85),rgba(11,35,74,.85)),
-                 url('https://images.unsplash.com/photo-1508385082359-fc7f21e46a79') center/cover no-repeat;
-      padding:4rem 1rem;border-radius:6px;
-    }
-    .hero h1{font-size:2.5rem;margin-bottom:.5rem;}
-    .hero p{font-size:1.1rem;max-width:600px;margin:0 auto 1rem;}
-
-    /* Features */
-    .features{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin:2rem 0;}
-    .feature{background:#fff;flex:1 1 240px;padding:1rem;border-radius:6px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.1);text-align:center;
-      display:flex;flex-direction:column;align-items:center;
-    }
-    .feature-icon{font-size:2.5rem;margin-bottom:.5rem;}
-    .feature h3{font-weight:600;color:#0b234a;margin-bottom:.5rem;}
-    .feature p{font-size:.95rem;color:#555;line-height:1.4;}
-
-    /* Insights & AI */
-    .insights, .ai-invest{
-      background:#fff;margin:3rem 1rem;padding:2rem;border-radius:6px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.1);text-align:center;
-    }
-    .ai-invest{background:#f0f3f7;}
-    .insights h2, .ai-invest h2{
-      font-family:Montserrat; color:#0b234a; margin-bottom:1rem;
-    }
-    .insights p, .ai-invest p{
-      font-size:1rem;line-height:1.5;max-width:700px;margin:0 auto;
+    .container {
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 1rem;
     }
 
-    /* Performance Metrics */
-    #performance{
-      margin:3rem 1rem;
-      text-align:center;
-    }
-    #performance h2{
-      font-family:Montserrat;
-      color:#0b234a;
-      margin-bottom:1rem;
-    }
-    .metrics{
-      display:flex;
-      justify-content:center;
-      gap:1.5rem;
-      flex-wrap:wrap;
-    }
-    .metric-card{
-      background:#fff;
-      padding:1.5rem;
-      border-radius:8px;
+    /* —— HEADER —— */
+    header {
+      background:#0b234a;
+      padding:1rem 0;
+      position:sticky; top:0; z-index:100;
       box-shadow:0 2px 8px rgba(0,0,0,0.1);
-      min-width:160px;
-      text-align:center;
     }
-    .metric-card h3{
-      color:#0b234a;
-      margin-bottom:0.5rem;
-      font-size:1rem;
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
-    .metric-card p{
-      font-size:1.3rem;
-      font-weight:700;
+    .logo {
+      font-family:Montserrat, sans-serif;
+      font-size:1.8rem;
+      color:#f0c040;
+      letter-spacing:2px;
+    }
+    .nav-links {
+      display:flex;
+      gap:1rem;
+    }
+    .nav-links a {
+      color:#dce3f0;
+      font-weight:500;
+      padding:0.3rem 0.5rem;
+      transition:color .3s;
+    }
+    .nav-links a:hover {
       color:#f0c040;
     }
-    @media(max-width:600px){
-      .metrics{flex-direction:column;gap:1rem;}
-      .features{flex-direction:column;}
+
+    /* —— HERO —— */
+    .hero {
+      margin:1rem 0;
+      text-align:center;
+      color:#fff;
+      padding:5rem 1rem 7rem;
+      border-radius:8px;
+      background:linear-gradient(rgba(11,35,74,.85),rgba(11,35,74,.85)),
+                 url('https://images.unsplash.com/photo-1508385082359-fc7f21e46a79?auto=format&fit=crop&w=1470&q=80')
+                 center/cover no-repeat;
+    }
+    .hero h1 {
+      font-family:Montserrat; font-size:2.8rem; margin-bottom:1rem;
+    }
+    .hero p {
+      font-size:1.2rem; max-width:700px; margin:0 auto 2rem; line-height:1.4; color:#ddd;
+    }
+    .btn-primary {
+      display:inline-flex; align-items:center; justify-content:center;
+      background:#f0c040; color:#0b234a;
+      padding:.85rem 2.2rem; border-radius:30px;
+      font-weight:700; text-transform:uppercase; letter-spacing:1px;
+      transition:background .3s;
+    }
+    .btn-primary:hover {
+      background:#d4a82a;
+    }
+
+    /* —— FEATURES —— */
+    .features {
+      display:flex; justify-content:center; flex-wrap:wrap;
+      gap:1rem; margin:2rem 0;
+    }
+    .feature {
+      background:#fff; flex:1 1 260px; padding:1.5rem;
+      border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);
+      text-align:center; display:flex; flex-direction:column; align-items:center;
+      transition:box-shadow .3s;
+    }
+    .feature:hover {
+      box-shadow:0 4px 16px rgba(0,0,0,0.15);
+    }
+    .feature-icon {
+      font-size:2.5rem; margin-bottom:.8rem; color:#f0c040;
+    }
+    .feature h3 {
+      font-family:Montserrat; color:#0b234a; margin-bottom:.5rem; font-weight:600;
+    }
+    .feature p {
+      color:#555; line-height:1.5; font-size:.95rem;
+    }
+
+    /* —— INSIGHTS / AI —— */
+    .insights, .ai-invest {
+      margin:3rem auto;
+      padding:2rem 1rem;
+      max-width:1100px;
+      border-radius:8px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+      text-align:center;
+    }
+    .ai-invest { background:#f0f3f7; }
+    .insights h2, .ai-invest h2 {
+      font-family:Montserrat; color:#0b234a; margin-bottom:1rem; font-size:1.6rem;
+    }
+    .insights p, .ai-invest p {
+      max-width:800px; margin:0 auto; line-height:1.6; font-size:1rem; color:#444;
+    }
+
+    /* —— PERFORMANCE METRICS —— */
+    #performance {
+      margin:3rem auto;
+      padding:0 1rem;
+      max-width:1100px;
+      text-align:center;
+    }
+    #performance h2 {
+      font-family:Montserrat; color:#0b234a; margin-bottom:1rem; font-size:1.6rem;
+    }
+    .metrics {
+      display:flex; justify-content:center; flex-wrap:wrap; gap:1.5rem;
+    }
+    .metric-card {
+      background:#fff; padding:1.5rem; border-radius:8px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1); min-width:160px; text-align:center;
+    }
+    .metric-card h3 {
+      color:#0b234a; margin-bottom:.5rem; font-size:1rem;
+    }
+    .metric-card p {
+      font-size:1.3rem; font-weight:700; color:#f0c040;
+    }
+
+    /* —— CASE STUDIES —— */
+    #cases {
+      margin:3rem auto; padding:0 1rem; max-width:1100px;
+    }
+    #cases h2 {
+      font-family:Montserrat; color:#0b234a; margin-bottom:1rem; text-align:center; font-size:1.6rem;
+    }
+    .case {
+      background:#fff; padding:1.2rem; margin:1rem 0;
+      border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);
+      max-width:800px; margin-left:auto; margin-right:auto;
+    }
+    .case h3 {
+      margin-bottom:.5rem; color:#0b234a; font-size:1.1rem; font-weight:600;
+    }
+    .case p { color:#555; line-height:1.5; font-size:.95rem; }
+
+    /* —— FAQ —— */
+    #faq {
+      margin:3rem auto; padding:0 1rem; max-width:1100px;
+    }
+    #faq h2 {
+      font-family:Montserrat; color:#0b234a; margin-bottom:1rem; text-align:center; font-size:1.6rem;
+    }
+    dl { max-width:800px; margin:0 auto; }
+    dt { font-weight:600; margin-top:1rem; }
+    dd { margin-left:1rem; color:#555; }
+
+    /* —— PRESS —— */
+    #press {
+      margin:3rem auto; padding:0 1rem; max-width:1100px; text-align:center;
+    }
+    #press h2 {
+      font-family:Montserrat; color:#0b234a; margin-bottom:1rem; font-size:1.6rem;
+    }
+    .logos {
+      display:flex; justify-content:center; flex-wrap:wrap; gap:2rem;
+    }
+    .logos img {
+      max-height:40px; opacity:0.8; transition:opacity 0.3s;
+    }
+    .logos img:hover { opacity:1; }
+
+    /* —— TEAM —— */
+    #team {
+      margin:3rem auto; padding:0 1rem; max-width:1100px; text-align:center;
+    }
+    #team h2 {
+      font-family:Montserrat; color:#0b234a; margin-bottom:1rem; font-size:1.6rem;
+    }
+    .team-members {
+      display:flex; justify-content:center; flex-wrap:wrap; gap:2rem;
+    }
+    .member {
+      max-width:220px; text-align:center;
+    }
+    .member img {
+      width:180px; height:180px; object-fit:cover;
+      border-radius:50%; border:3px solid #f0c040; margin-bottom:.5rem;
+    }
+    .member h4 { color:#0b234a; font-weight:600; margin-bottom:.3rem; }
+    .member p { font-size:.9rem; color:#555; }
+
+    /* —— SERVICES —— */
+    #services {
+      margin:3rem auto; padding:0 1rem; max-width:1100px; text-align:center;
+    }
+    #services h2 {
+      font-family:Montserrat; color:#0b234a; margin-bottom:1rem; font-size:1.6rem;
+    }
+    .service-list {
+      display:inline-block; text-align:left; list-style:none; padding-left:0;
+    }
+    .service-list li {
+      background:url('data:image/svg+xml;utf8,<svg fill="%23f0c040" height="16" viewBox="0 0 24 24" width="16"><path d="M20.285 2.4L9 14.5l-5.285-5.3L2 12l7 7 13-16z"/></svg>') no-repeat left center;
+      padding-left:25px; margin-bottom:1rem; color:#444; font-size:1.1rem; line-height:1.5;
+    }
+
+    /* —— TESTIMONIALS —— */
+    .testimonials {
+      margin:3rem auto; padding:2rem 1rem; max-width:1100px; text-align:center;
+    }
+    .testimonial-slide { display:none; }
+    .testimonial-slide.active { display:block; }
+    .testimonial-author { margin-top:1rem; color:#f0c040; font-weight:700; }
+    .testimonial-arrows {
+      display:flex; justify-content:center; gap:1rem; margin-top:1rem;
+    }
+    .arrow-btn {
+      background:#f0c040; border:none; width:36px; height:36px; border-radius:50%;
+      color:#0b234a; cursor:pointer; font-size:1.4rem; display:flex;
+      align-items:center; justify-content:center; transition:background .3s;
+    }
+    .arrow-btn:hover { background:#d4a82a; }
+
+    /* —— SECURITY —— */
+    #security {
+      margin:3rem auto; padding:2rem 1rem; max-width:800px; text-align:center;
+      background:#f0f3f7; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.05);
+    }
+    #security p { font-size:1rem; color:#444; line-height:1.5; }
+
+    /* —— INVITE —— */
+    #invite {
+      margin:3rem auto; padding:0 1rem; max-width:1100px; text-align:center;
+    }
+    #invite h2 {
+      font-family:Montserrat; color:#0b234a; margin-bottom:1rem; font-size:1.6rem;
+    }
+    .button-group {
+      display:flex; justify-content:center; flex-wrap:wrap; gap:1rem;
+    }
+    .button-group a.btn-primary {
+      min-width:180px; display:inline-flex; align-items:center; justify-content:center;
+    }
+    .button-group a.whatsapp { background:#25d366; }
+    .button-group a.whatsapp:hover { background:#1da851; }
+    .button-group a.telegram { background:#0088cc; }
+    .button-group a.telegram:hover { background:#006699; }
+
+    /* —— FOOTER —— */
+    footer {
+      background:#0b234a; color:#aeb7c1; text-align:center; padding:1.5rem 0;
+    }
+
+    /* —— RESPONSIVE —— */
+    @media(max-width:768px) {
+      .features, .metrics, .team-members, .button-group {
+        flex-direction:column; align-items:center;
+      }
+      .testimonial-arrows {
+        flex-direction:row;
+      }
+      .nav, .nav-links {
+        flex-direction:column; gap:.5rem;
+      }
+      .nav-links a { width:100%; text-align:center; padding:.5rem 0; }
     }
   </style>
 </head>
 <body>
-  <header>US Smart Trading Group</header>
+
+  <header>
+    <nav class="nav container">
+      <div class="logo">US Smart Trading</div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#industry-insights">Insights</a>
+        <a href="#ai-investment">AI</a>
+        <a href="#performance">Performance</a>
+        <a href="#cases">Cases</a>
+        <a href="#faq">FAQ</a>
+        <a href="#press">Press</a>
+        <a href="#team">Team</a>
+        <a href="#services">Services</a>
+        <a href="#security">Security</a>
+        <a href="#invite" class="btn-primary">Join Now</a>
+      </div>
+    </nav>
+  </header>
 
   <section class="hero container">
     <h1>Smart US Stock Trading Group</h1>
     <p>Leverage expert insights and AI-powered strategies to grow your wealth steadily and securely.</p>
+    <a href="#invite" class="btn-primary">Join Our Group</a>
   </section>
 
-  <section class="features container">
+  <section id="features" class="features container">
     <div class="feature"><div class="feature-icon">📈</div><h3>Market Forecasts</h3><p>Daily/weekly market research and technical &amp; fundamental analysis to guide your trades.</p></div>
     <div class="feature"><div class="feature-icon">📊</div><h3>Research Reports</h3><p>In-depth industry insights covering key sectors such as consumer goods, technology, and energy.</p></div>
     <div class="feature"><div class="feature-icon">💡</div><h3>Trading Guidance</h3><p>Accurate buy/sell signals, risk analysis, and portfolio optimization support tailored for you.</p></div>
   </section>
 
-  <section class="insights container">
+  <section id="industry-insights" class="insights container">
     <h2>Industry Insights</h2>
-    <p>Our team continuously analyzes market trends and industry shifts in consumer goods, technology, energy, and more.</p>
+    <p>Our team continuously analyzes market trends and industry shifts in consumer goods, technology, energy, and more. This allows us to identify emerging opportunities early and guide your investments with precision.</p>
   </section>
 
-  <section class="ai-invest container">
+  <section id="ai-investment" class="ai-invest container">
     <h2>AI-Powered Investment Assistance</h2>
-    <p>Leveraging cutting-edge AI algorithms, we optimize your portfolio allocation and risk control.</p>
+    <p>Leveraging cutting-edge AI algorithms, we optimize your portfolio allocation and risk control, ensuring balanced, intelligent, and adaptive investment strategies tailored to your style and goals.</p>
   </section>
 
   <section id="performance" class="container">
@@ -118,5 +335,18 @@
       <div class="metric-card"><h3>Max Drawdown</h3><p>–4.2%</p></div>
     </div>
   </section>
+
+  <!-- 你可以继续按类似方式添加 Cases、FAQ、Press、Team、Services、Testimonials、Security ... -->
+
+  <section id="invite" class="invite-section container">
+    <h2>Join Our Smart Trading Community</h2>
+    <div class="button-group">
+      <a href="YOUR_WHATSAPP_LINK" class="btn-primary whatsapp" target="_blank">Join WhatsApp Group</a>
+      <a href="YOUR_TELEGRAM_LINK" class="btn-primary telegram" target="_blank">Join Telegram Group</a>
+    </div>
+  </section>
+
+  <footer>&copy; 2025 US Smart Trading Group. All rights reserved.</footer>
+
 </body>
 </html>
