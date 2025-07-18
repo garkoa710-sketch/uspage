@@ -11,7 +11,6 @@
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
-
     body {
       font-family: 'Roboto', sans-serif;
       background: #f7f9fc;
@@ -20,19 +19,16 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-
     a {
       color: inherit;
       text-decoration: none;
     }
-
     /* Container */
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 1rem;
     }
-
     /* Header */
     header {
       background: #0b234a; /* Dark blue */
@@ -42,7 +38,6 @@
       top: 0;
       z-index: 100;
     }
-
     .nav {
       display: flex;
       justify-content: space-between;
@@ -51,7 +46,6 @@
       margin: auto;
       padding: 0 1rem;
     }
-
     .logo {
       font-family: 'Montserrat', sans-serif;
       font-size: 1.8rem;
@@ -59,23 +53,19 @@
       font-weight: 600;
       letter-spacing: 2px;
     }
-
     .nav-links {
       display: flex;
       gap: 1.5rem;
     }
-
     .nav-links a {
       color: #dce3f0;
       font-weight: 500;
       font-size: 1rem;
       transition: color 0.3s ease;
     }
-
     .nav-links a:hover {
       color: #f0c040;
     }
-
     /* Hero Banner */
     .hero {
       background: linear-gradient(rgba(11,35,74,0.85), rgba(11,35,74,0.85)),
@@ -86,7 +76,6 @@
       border-radius: 8px;
       margin-top: 1rem;
     }
-
     .hero h1 {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
@@ -94,7 +83,6 @@
       margin-bottom: 1rem;
       letter-spacing: 1.2px;
     }
-
     .hero p {
       font-size: 1.25rem;
       max-width: 700px;
@@ -102,7 +90,6 @@
       line-height: 1.4;
       color: #ddd;
     }
-
     .btn-primary {
       background-color: #f0c040;
       color: #0b234a;
@@ -115,12 +102,13 @@
       transition: background-color 0.3s ease;
       text-transform: uppercase;
       letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
-
     .btn-primary:hover {
       background-color: #d4a82a;
     }
-
     /* Features Section */
     .features {
       display: flex;
@@ -129,40 +117,37 @@
       flex-wrap: wrap;
       justify-content: center;
     }
-
     .feature {
       background: #fff;
       flex: 1 1 280px;
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 4px 20px rgb(0 0 0 / 0.08);
-      text-align: center;
+      text-align: center; /* 文案居中 */
       transition: box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-
     .feature:hover {
       box-shadow: 0 8px 30px rgb(0 0 0 / 0.15);
     }
-
     .feature-icon {
       font-size: 3rem;
       color: #f0c040;
       margin-bottom: 1rem;
     }
-
     .feature h3 {
       font-family: 'Montserrat', sans-serif;
       margin-bottom: 1rem;
       font-weight: 600;
       color: #0b234a;
     }
-
     .feature p {
       font-size: 1rem;
       color: #555;
       line-height: 1.5;
     }
-
     /* About Team */
     .team {
       background: #fff;
@@ -171,25 +156,21 @@
       box-shadow: 0 4px 20px rgb(0 0 0 / 0.08);
       margin-bottom: 4rem;
     }
-
     .team h2 {
       text-align: center;
       margin-bottom: 2rem;
       color: #0b234a;
     }
-
     .team-members {
       display: flex;
       justify-content: center;
       gap: 3rem;
       flex-wrap: wrap;
     }
-
     .member {
       width: 220px;
       text-align: center;
     }
-
     .member img {
       width: 180px;
       height: 180px;
@@ -198,44 +179,39 @@
       margin-bottom: 1rem;
       border: 3px solid #f0c040;
     }
-
     .member h4 {
       color: #0b234a;
       font-weight: 600;
       margin-bottom: 0.25rem;
     }
-
     .member p {
       font-size: 0.9rem;
       color: #555;
     }
-
     /* Services */
     .services {
       margin-bottom: 4rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
     .services h2 {
       color: #0b234a;
       margin-bottom: 2rem;
+      text-align: center;
     }
-
     .service-list {
       list-style: none;
-      max-width: 700px;
-      margin: 0 auto;
       padding-left: 0;
     }
-
     .service-list li {
       background: url('data:image/svg+xml;utf8,<svg fill="%23f0c040" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M20.285 2.4L9 14.5l-5.285-5.3L2 12l7 7 13-16z"/></svg>') no-repeat left center;
       padding-left: 25px;
       margin-bottom: 1rem;
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: #444;
-      line-height: 1.4;
+      line-height: 1.5;
     }
-
     /* Security Section */
     .security {
       background: #f0f3f7;
@@ -247,14 +223,13 @@
       color: #444;
       font-size: 1rem;
       box-shadow: 0 0 15px rgb(0 0 0 / 0.05);
+      line-height: 1.6;
     }
-
     /* Form */
     .form-section {
       max-width: 600px;
       margin: 0 auto 6rem;
     }
-
     form {
       display: flex;
       flex-direction: column;
@@ -264,7 +239,6 @@
       border-radius: 10px;
       box-shadow: 0 4px 20px rgb(0 0 0 / 0.1);
     }
-
     input, textarea {
       padding: 0.75rem 1rem;
       border: 1.5px solid #ccc;
@@ -272,13 +246,12 @@
       font-size: 1rem;
       font-family: inherit;
       transition: border-color 0.3s ease;
+      resize: vertical;
     }
-
     input:focus, textarea:focus {
       border-color: #f0c040;
       outline: none;
     }
-
     button.submit-btn {
       background: #f0c040;
       border: none;
@@ -291,12 +264,52 @@
       color: #0b234a;
       text-transform: uppercase;
       letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
-
     button.submit-btn:hover {
       background: #d4a82a;
     }
-
+    /* Buttons container */
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .button-group a.btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.8rem;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff !important;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      user-select: none;
+      min-width: 180px;
+      justify-content: center;
+    }
+    .button-group a.btn-primary.whatsapp {
+      background-color: #25d366;
+    }
+    .button-group a.btn-primary.whatsapp:hover {
+      background-color: #1da851;
+    }
+    .button-group a.btn-primary.telegram {
+      background-color: #0088cc;
+    }
+    .button-group a.btn-primary.telegram:hover {
+      background-color: #006699;
+    }
     /* Footer */
     footer {
       background: #0b234a;
@@ -305,21 +318,24 @@
       text-align: center;
       font-size: 0.9rem;
     }
-
     /* Responsive */
     @media (max-width: 768px) {
       .features {
         flex-direction: column;
       }
-
       .team-members {
         flex-direction: column;
       }
+      .button-group {
+        flex-direction: column;
+      }
+      .button-group a.btn-primary {
+        min-width: auto;
+        width: 100%;
+        text-align: center;
+      }
     }
-
-
     /* ========== Testimonial Carousel ========== */
-
     .testimonials {
       max-width: 800px;
       margin: 0 auto 5rem;
@@ -333,17 +349,15 @@
       font-style: italic;
       line-height: 1.5;
       text-align: center;
+      min-height: 160px;
     }
-
     .testimonial-slide {
       display: none;
       min-height: 140px;
     }
-
     .testimonial-slide.active {
       display: block;
     }
-
     .testimonial-author {
       margin-top: 1.5rem;
       font-weight: 700;
@@ -351,34 +365,37 @@
       font-size: 1rem;
       color: #f0c040;
     }
-
     /* Arrows */
     .testimonial-arrows {
       position: absolute;
       top: 50%;
-      width: 100%;
+      left: 0;
+      right: 0;
       display: flex;
       justify-content: space-between;
-      transform: translateY(-50%);
       padding: 0 1.5rem;
       box-sizing: border-box;
+      transform: translateY(-50%);
+      pointer-events: none;
     }
-
     .arrow-btn {
+      pointer-events: auto;
       background: #f0c040;
       border: none;
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       cursor: pointer;
       font-weight: 700;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       color: #0b234a;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.2);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       transition: background-color 0.3s ease;
       user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-
     .arrow-btn:hover {
       background-color: #d4a82a;
     }
@@ -386,147 +403,83 @@
 </head>
 <body>
 
-  <header>
-    <nav class="nav container">
-      <div class="logo">US Smart Trading</div>
-      <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#team">Team</a>
-        <a href="#services">Services</a>
-        <a href="#security">Security</a>
-        <a href="#register" class="btn-primary" style="padding: 0.6rem 1.5rem;">Join Now</a>
-      </div>
-    </nav>
-  </header>
-
-  <section class="hero container" style="margin-top: 4rem;">
-    <h1>Smart US Stock Trading Group</h1>
-    <p>Leverage expert insights and AI-powered strategies to grow your wealth steadily and securely.</p>
-    <a href="#register" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Join Our Group</a>
-  </section>
-
-  <section id="features" class="features container" style="margin-top: 4rem;">
-    <div class="feature">
-      <div class="feature-icon">📈</div>
-      <h3>Market Forecasts</h3>
-      <p>Daily/weekly market research and technical & fundamental analysis to guide your trades.</p>
+<header>
+  <nav class="nav container" aria-label="Primary Navigation">
+    <div class="logo">US Smart Trading</div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#team">Team</a>
+      <a href="#services">Services</a>
+      <a href="#security">Security</a>
+      <a href="#register" class="btn-primary" style="padding: 0.6rem 1.5rem;">Join Now</a>
     </div>
-    <div class="feature">
-      <div class="feature-icon">📊</div>
-      <h3>Research Reports</h3>
-      <p>In-depth industry insights covering key sectors such as consumer goods, technology, and energy.</p>
+  </nav>
+</header>
+
+<section class="hero container" style="margin-top: 4rem;">
+  <h1>Smart US Stock Trading Group</h1>
+  <p>Leverage expert insights and AI-powered strategies to grow your wealth steadily and securely.</p>
+  <a href="#register" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Join Our Group</a>
+</section>
+
+<section id="features" class="features container" style="margin-top: 4rem;">
+  <div class="feature" role="region" aria-label="Market Forecasts">
+    <div class="feature-icon" aria-hidden="true">📈</div>
+    <h3>Market Forecasts</h3>
+    <p>Daily/weekly market research and technical & fundamental analysis to guide your trades.</p>
+  </div>
+  <div class="feature" role="region" aria-label="Research Reports">
+    <div class="feature-icon" aria-hidden="true">📊</div>
+    <h3>Research Reports</h3>
+    <p>In-depth industry insights covering key sectors such as consumer goods, technology, and energy.</p>
+  </div>
+  <div class="feature" role="region" aria-label="Trading Guidance">
+    <div class="feature-icon" aria-hidden="true">💡</div>
+    <h3>Trading Guidance</h3>
+    <p>Accurate buy/sell signals, risk analysis, and portfolio optimization support tailored for you.</p>
+  </div>
+</section>
+
+<section id="team" class="team container">
+  <h2>Meet Our Team</h2>
+  <div class="team-members">
+    <div class="member">
+      <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Professor Zhang" />
+      <h4>Professor Zhang</h4>
+      <p>Lead Analyst & Founder</p>
     </div>
-    <div class="feature">
-      <div class="feature-icon">💡</div>
-      <h3>Trading Guidance</h3>
-      <p>Accurate buy/sell signals, risk analysis, and portfolio optimization support tailored for you.</p>
+    <div class="member">
+      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Analyst Li" />
+      <h4>Analyst Li</h4>
+      <p>Senior Market Researcher</p>
     </div>
-  </section>
-
-  <section id="team" class="team container">
-    <h2>Meet Our Team</h2>
-    <div class="team-members">
-      <div class="member">
-        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Professor Zhang" />
-        <h4>Professor Zhang</h4>
-        <p>Lead Analyst & Founder</p>
-      </div>
-      <div class="member">
-        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Analyst Li" />
-        <h4>Analyst Li</h4>
-        <p>Senior Market Researcher</p>
-      </div>
-      <div class="member">
-        <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Strategist Wang" />
-        <h4>Strategist Wang</h4>
-        <p>Trading Strategist</p>
-      </div>
+    <div class="member">
+      <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Strategist Wang" />
+      <h4>Strategist Wang</h4>
+      <p>Trading Strategist</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="services" class="services container">
-    <h2>Our Services</h2>
-    <ul class="service-list">
-      <li>Daily US stock recommendations with complete trading guides</li>
-      <li>Pre-market strategies and market trend forecasting</li>
-      <li>Detailed monthly and daily research reports</li>
-      <li>Risk management and trading education</li>
-      <li>AI-assisted portfolio construction and optimization</li>
-    </ul>
-  </section>
+<section id="services" class="services container">
+  <h2>Our Services</h2>
+  <ul class="service-list" role="list">
+    <li>Daily US stock recommendations with complete trading guides</li>
+    <li>Pre-market strategies and market trend forecasting</li>
+    <li>Detailed monthly and daily research reports</li>
+    <li>Risk management and trading education</li>
+    <li>AI-assisted portfolio construction and optimization</li>
+  </ul>
+</section>
 
-  <section id="security" class="security container">
-    <p>All chat records are securely archived for 10 years and are open for SEC audits to ensure transparency. We guarantee no exaggeration. Should you experience losses following our strategies, the professor will provide full compensation based on verified trading records.</p>
-  </section>
+<section id="security" class="security container" aria-label="Security and Compensation Guarantee">
+  <p>All chat records are securely archived for 10 years and are open for SEC audits to ensure transparency. We guarantee no exaggeration. Should you experience losses following our strategies, the professor will provide full compensation based on verified trading records.</p>
+</section>
 
-  <!-- Testimonial Carousel -->
-  <section class="testimonials container" aria-label="Customer Testimonials">
-    <div class="testimonial-slide active">
-      "Joining this group was the best decision I made in my trading journey. The reports and signals helped me grow steadily."
-      <div class="testimonial-author">— Emily R.</div>
-    </div>
-    <div class="testimonial-slide">
-      "Professional, reliable, and transparent. I appreciate the risk control guidance and clear compensation policy."
-      <div class="testimonial-author">— James K.</div>
-    </div>
-    <div class="testimonial-slide">
-      "The team's insights and AI portfolio optimization saved me time and improved my returns significantly."
-      <div class="testimonial-author">— Sophia L.</div>
-    </div>
-    <div class="testimonial-arrows">
-      <button class="arrow-btn" id="prev">&#8592;</button>
-      <button class="arrow-btn" id="next">&#8594;</button>
-    </div>
-  </section>
-
-  <section id="register" class="form-section container">
-    <h2>Register to Join Our Group</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Email Address" required />
-      <textarea name="message" rows="4" placeholder="Your questions or trading experience (optional)"></textarea>
-      <button type="submit" class="submit-btn">Submit</button>
-    </form>
-    <div style="margin-top: 2rem; text-align: center;">
-      <a href="YOUR_WHATSAPP_LINK" class="btn-primary" style="background:#25d366; margin-right:1rem;">Join WhatsApp Group</a>
-      <a href="YOUR_TELEGRAM_LINK" class="btn-primary" style="background:#0088cc;">Join Telegram Group</a>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 US Smart Trading Group. All rights reserved.
-  </footer>
-
-  <script>
-    // Testimonial Carousel JS
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const prevBtn = document.getElementById('prev');
-    const nextBtn = document.getElementById('next');
-    let current = 0;
-    const total = slides.length;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-    }
-
-    prevBtn.addEventListener('click', () => {
-      current = (current === 0) ? total - 1 : current - 1;
-      showSlide(current);
-    });
-
-    nextBtn.addEventListener('click', () => {
-      current = (current === total - 1) ? 0 : current + 1;
-      showSlide(current);
-    });
-
-    // Auto slide every 7 seconds
-    setInterval(() => {
-      current = (current === total - 1) ? 0 : current + 1;
-      showSlide(current);
-    }, 7000);
-  </script>
-
-</body>
-</html>
+<!-- Testimonial Carousel -->
+<section class="testimonials container" aria-label="Customer Testimonials">
+  <div class="testimonial-slide active">
+    "Joining this group was the best decision I made in my trading journey. The reports and signals helped me grow steadily."
+    <div class="testimonial-author">— Emily R.</div>
+  </div>
+ 
