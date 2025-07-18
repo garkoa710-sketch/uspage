@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>US Smart Trading Group</title>
   <style>
-    /* 基础 & Reset */
+    /* Reset & Base */
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:Roboto,sans-serif;background:#f7f9fc;color:#222;line-height:1.6;}
     a{text-decoration:none;color:inherit;}
@@ -13,6 +13,7 @@
 
     /* Header */
     header{background:#0b234a;color:#fff;padding:1rem;text-align:center;position:sticky;top:0;z-index:100;}
+
     /* Hero */
     .hero{margin:1rem 0;text-align:center;color:#fff;
       background:linear-gradient(rgba(11,35,74,.85),rgba(11,35,74,.85)),
@@ -39,36 +40,83 @@
     }
     .ai-invest{background:#f0f3f7;}
     .insights h2, .ai-invest h2{
-      font-family:Montserrat,sans-serif;color:#0b234a;margin-bottom:1rem;
+      font-family:Montserrat; color:#0b234a; margin-bottom:1rem;
     }
     .insights p, .ai-invest p{
       font-size:1rem;line-height:1.5;max-width:700px;margin:0 auto;
     }
 
-    /* Responsive */
+    /* Performance Metrics */
+    #performance{
+      margin:3rem 1rem;
+      text-align:center;
+    }
+    #performance h2{
+      font-family:Montserrat;
+      color:#0b234a;
+      margin-bottom:1rem;
+    }
+    .metrics{
+      display:flex;
+      justify-content:center;
+      gap:1.5rem;
+      flex-wrap:wrap;
+    }
+    .metric-card{
+      background:#fff;
+      padding:1.5rem;
+      border-radius:8px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+      min-width:160px;
+      text-align:center;
+    }
+    .metric-card h3{
+      color:#0b234a;
+      margin-bottom:0.5rem;
+      font-size:1rem;
+    }
+    .metric-card p{
+      font-size:1.3rem;
+      font-weight:700;
+      color:#f0c040;
+    }
     @media(max-width:600px){
+      .metrics{flex-direction:column;gap:1rem;}
       .features{flex-direction:column;}
     }
   </style>
 </head>
 <body>
   <header>US Smart Trading Group</header>
+
   <section class="hero container">
     <h1>Smart US Stock Trading Group</h1>
     <p>Leverage expert insights and AI-powered strategies to grow your wealth steadily and securely.</p>
   </section>
+
   <section class="features container">
     <div class="feature"><div class="feature-icon">📈</div><h3>Market Forecasts</h3><p>Daily/weekly market research and technical &amp; fundamental analysis to guide your trades.</p></div>
     <div class="feature"><div class="feature-icon">📊</div><h3>Research Reports</h3><p>In-depth industry insights covering key sectors such as consumer goods, technology, and energy.</p></div>
     <div class="feature"><div class="feature-icon">💡</div><h3>Trading Guidance</h3><p>Accurate buy/sell signals, risk analysis, and portfolio optimization support tailored for you.</p></div>
   </section>
+
   <section class="insights container">
     <h2>Industry Insights</h2>
-    <p>Our team continuously analyzes market trends and industry shifts in consumer goods, technology, energy, and more. This allows us to identify emerging opportunities early and guide your investments with precision.</p>
+    <p>Our team continuously analyzes market trends and industry shifts in consumer goods, technology, energy, and more.</p>
   </section>
+
   <section class="ai-invest container">
     <h2>AI-Powered Investment Assistance</h2>
-    <p>Leveraging cutting-edge AI algorithms, we optimize your portfolio allocation and risk control, ensuring balanced, intelligent, and adaptive investment strategies tailored to your style and goals.</p>
+    <p>Leveraging cutting-edge AI algorithms, we optimize your portfolio allocation and risk control.</p>
+  </section>
+
+  <section id="performance" class="container">
+    <h2>Performance Metrics</h2>
+    <div class="metrics">
+      <div class="metric-card"><h3>Average Return</h3><p>+28.4% YTD</p></div>
+      <div class="metric-card"><h3>Win Rate</h3><p>76%</p></div>
+      <div class="metric-card"><h3>Max Drawdown</h3><p>–4.2%</p></div>
+    </div>
   </section>
 </body>
 </html>
