@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Language" content="en" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>US Smart Trading Group</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet" />
@@ -34,7 +35,7 @@
 
     /* Header */
     header {
-      background: #0b234a; /* 深蓝 */
+      background: #0b234a; /* Dark blue */
       padding: 1rem 0;
       box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
       position: sticky;
@@ -54,7 +55,7 @@
     .logo {
       font-family: 'Montserrat', sans-serif;
       font-size: 1.8rem;
-      color: #f0c040; /* 金色 */
+      color: #f0c040; /* Gold */
       font-weight: 600;
       letter-spacing: 2px;
     }
@@ -458,7 +459,7 @@
     <p>All chat records are securely archived for 10 years and are open for SEC audits to ensure transparency. We guarantee no exaggeration. Should you experience losses following our strategies, the professor will provide full compensation based on verified trading records.</p>
   </section>
 
-  <!-- 新增客户评价轮播 -->
+  <!-- Testimonial Carousel -->
   <section class="testimonials container" aria-label="Customer Testimonials">
     <div class="testimonial-slide active">
       "Joining this group was the best decision I made in my trading journey. The reports and signals helped me grow steadily."
@@ -497,7 +498,7 @@
   </footer>
 
   <script>
-    // JS控制评价轮播
+    // Testimonial Carousel JS
     const slides = document.querySelectorAll('.testimonial-slide');
     const prevBtn = document.getElementById('prev');
     const nextBtn = document.getElementById('next');
@@ -511,10 +512,21 @@
     }
 
     prevBtn.addEventListener('click', () => {
-      current = (current === 0) ? total -1 : current -1;
+      current = (current === 0) ? total - 1 : current - 1;
       showSlide(current);
     });
 
     nextBtn.addEventListener('click', () => {
-      current = (current === total -1) ? 0 : current +1;
-      showSlide
+      current = (current === total - 1) ? 0 : current + 1;
+      showSlide(current);
+    });
+
+    // Auto slide every 7 seconds
+    setInterval(() => {
+      current = (current === total - 1) ? 0 : current + 1;
+      showSlide(current);
+    }, 7000);
+  </script>
+
+</body>
+</html>
