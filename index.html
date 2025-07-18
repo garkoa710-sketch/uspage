@@ -482,4 +482,72 @@
     "Joining this group was the best decision I made in my trading journey. The reports and signals helped me grow steadily."
     <div class="testimonial-author">— Emily R.</div>
   </div>
- 
+  <div class="testimonial-slide">
+    "Professional and trustworthy team. Their insights have made trading less stressful and more profitable."
+    <div class="testimonial-author">— Michael S.</div>
+  </div>
+  <div class="testimonial-slide">
+    "Clear, accurate, and actionable advice every trading day. Highly recommend for anyone serious about US stocks."
+    <div class="testimonial-author">— David K.</div>
+  </div>
+  <div class="testimonial-arrows" role="group" aria-label="Testimonial navigation">
+    <button class="arrow-btn" id="prev" aria-label="Previous testimonial">&#8592;</button>
+    <button class="arrow-btn" id="next" aria-label="Next testimonial">&#8594;</button>
+  </div>
+</section>
+
+<!-- Registration Form -->
+<section id="register" class="form-section container" aria-labelledby="register-title">
+  <h2 id="register-title" style="text-align:center; color:#0b234a; margin-bottom:1.5rem;">Join Our Smart Trading Group</h2>
+  <form action="https://formspree.io/f/myylrjgj" method="POST">
+    <label for="name">Full Name*</label>
+    <input type="text" id="name" name="name" required placeholder="Your full name" />
+    <label for="email">Email Address*</label>
+    <input type="email" id="email" name="_replyto" required placeholder="your.email@example.com" />
+    <label for="message">Additional Notes (optional)</label>
+    <textarea id="message" name="message" rows="4" placeholder="Tell us anything you'd like..."></textarea>
+    <button type="submit" class="submit-btn">Register</button>
+  </form>
+
+  <div class="button-group" style="margin-top: 1.5rem;">
+    <a href="YOUR_WHATSAPP_LINK" class="btn-primary whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Join WhatsApp Group">Join WhatsApp Group</a>
+    <a href="YOUR_TELEGRAM_LINK" class="btn-primary telegram" target="_blank" rel="noopener noreferrer" aria-label="Join Telegram Group">Join Telegram Group</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 US Smart Trading Group. All rights reserved.
+</footer>
+
+<script>
+  // Testimonial Carousel
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+  let current = 0;
+  const total = slides.length;
+
+  function showSlide(index) {
+    slides.forEach(s => s.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+
+  prevBtn.addEventListener('click', () => {
+    current = (current === 0) ? total - 1 : current - 1;
+    showSlide(current);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    current = (current === total - 1) ? 0 : current + 1;
+    showSlide(current);
+  });
+
+  // Auto rotate every 7 seconds
+  setInterval(() => {
+    current = (current === total - 1) ? 0 : current + 1;
+    showSlide(current);
+  }, 7000);
+</script>
+
+</body>
+</html>
