@@ -4,68 +4,94 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Finanzstrategie-Community</title>
-  <meta name="description" content="Risikoabsicherung bei Marktcrashs & monatliche Aktien-Top‑Empfehlungen für fundierte Anlageentscheidungen." />
+  <meta name="description" content="Risikoabsicherung bei Marktcrashs & monatliche Aktien-Top‑Empfehlungen für fundierte Anlageentscheidungen." />
   <!-- Google Font & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kTcUqX+6l9G8V0Q7+1Jp6Jv0Qd7V+0j2E2QkH1sN+X1Y5Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     /* Reset */
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Montserrat',sans-serif; color:#1a1a1a; background:#f5f7fa; line-height:1.6; scroll-behavior:smooth; }
-    a{ text-decoration:none; color:inherit; }
-    img{ display:block; max-width:100%; }
-    .container{ max-width:800px; margin:0 auto; padding:0 20px; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; color: #1a1a1a; background: #f5f7fa; line-height: 1.6; scroll-behavior: smooth; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
 
     /* Header */
-    header{ background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100; }
-    .nav{ display:flex; justify-content:space-between; align-items:center; padding:20px 0; }
-    .logo{ font-size:1.6rem; font-weight:700; color:#0b2240; }
-    nav a{ margin-left:30px; font-size:1rem; color:#415a77; padding:8px; transition:color .3s; }
-    nav a.active, nav a:hover{ color:#ff7f50; }
+    header { background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+    .logo { font-size: 1.6rem; font-weight: 700; color: #0b2240; }
+    nav a { margin-left: 20px; font-size: 0.95rem; color: #415a77; padding: 8px; transition: color .3s; }
+    nav a.active, nav a:hover { color: #ff7f50; }
+
+    /* Back-to-top */
+    #backToTop { position: fixed; bottom: 30px; right: 30px; background: #ff7f50; color: #fff; padding: 12px 16px; border-radius: 50%; display: none; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: background .3s; }
+    #backToTop:hover { background: #ff6930; }
 
     /* Hero */
-    .hero{ background:linear-gradient(135deg,#0b2240 0%,#1a3a5a 100%); color:#fff; text-align:center; padding:140px 0 160px; position:relative; }
-    .hero:before{ content:'\f54a'; font-family:'Font Awesome 5 Free'; font-weight:900; font-size:8rem; color:rgba(255,255,255,0.05); position:absolute; top:20%; left:calc(50% - 4rem); }
-    .hero h1{ font-size:2.5rem; font-weight:700; margin-bottom:20px; position:relative; z-index:1; }
-    .hero p{ font-size:1.2rem; margin-bottom:30px; max-width:700px; margin:0 auto; opacity:.9; position:relative; z-index:1; }
-    .btn-primary{ background:#ff7f50; color:#fff; padding:16px 40px; border-radius:30px; font-size:1.1rem; font-weight:600; box-shadow:0 4px 12px rgba(255,127,80,0.4); transition:background .3s,transform .3s; display:inline-block; position:relative; z-index:1; }
-    .btn-primary:hover{ background:#ff6930; transform:translateY(-3px); }
-    .btn-primary:after{ content:'GRATIS'; position:absolute; top:-10px; right:-20px; background:#28a745; color:#fff; font-size:0.75rem; font-weight:700; padding:4px 8px; border-radius:4px; }
-    .subtext{ font-size:0.85rem; color:#e0e0e0; margin-top:12px; position:relative; z-index:1; }
+    .hero { background: linear-gradient(135deg, #0b2240 0%, #1a3a5a 100%); color: #fff; text-align: center; padding: 140px 0 160px; position: relative; }
+    .hero:before { content: '\f54a'; font-family: 'Font Awesome 5 Free'; font-weight: 900; font-size: 8rem; color: rgba(255,255,255,0.05); position: absolute; top: 20%; left: calc(50% - 4rem); }
+    .hero h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 20px; position: relative; z-index: 1; }
+    .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin: 0 auto; opacity: .9; position: relative; z-index: 1; }
+    .hero .btn-primary { background: #ff7f50; color: #fff; padding: 16px 40px; border-radius: 30px; font-size: 1.1rem; font-weight: 600; box-shadow: 0 4px 12px rgba(255,127,80,0.4); transition: background .3s, transform .3s; display: inline-block; position: relative; z-index: 1; }
+    .hero .btn-primary:hover { background: #ff6930; transform: translateY(-3px); }
+    .hero .btn-primary:after { content: 'GRATIS'; position: absolute; top: -10px; right: -20px; background: #28a745; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; }
+    .hero .subtext { font-size: 0.85rem; color: #e0e0e0; margin-top: 12px; position: relative; z-index: 1; }
 
-    /* Trust Badges */
-    .badges{ display:flex; justify-content:center; gap:40px; margin-top:40px; position:relative; z-index:1; }
-    .badge{ display:flex; align-items:center; gap:8px; font-size:0.9rem; background:rgba(255,255,255,0.15); padding:8px 12px; border-radius:20px; }
-    .badge i{ color:#fff; font-size:1.2rem; }
+    /* Badges */
+    .badges { display: flex; justify-content: center; gap: 40px; margin-top: 40px; position: relative; z-index: 1; }
+    .badge { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; background: rgba(255,255,255,0.15); padding: 8px 12px; border-radius: 20px; }
+    .badge i { color: #fff; font-size: 1.2rem; }
 
-    /* Partner Logos */
-    .partners{ display:flex; justify-content:center; align-items:center; gap:30px; flex-wrap:wrap; margin-top:50px; }
-    .partners img{ max-height:40px; opacity:0.7; transition:opacity .3s; }
-    .partners img:hover{ opacity:1; }
+    /* Partners */
+    .partners { display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; margin-top: 50px; }
+    .partners img { max-height: 40px; opacity: 0.7; transition: opacity .3s; }
+    .partners img:hover { opacity: 1; }
 
     /* Section Titles */
-    .section{ padding:80px 0; }
-    .section:nth-of-type(even){ background:#ffffff; }
-    .section:nth-of-type(odd){ background:#f9fbfd; }
-    .section-title{ font-size:1.8rem; font-weight:600; color:#0b2240; text-align:center; margin-bottom:40px; position:relative; }
-    .section-title:after{ content: ''; width:60px; height:4px; background:#ff7f50; display:block; margin:12px auto 0; border-radius:2px; }
+    .section { padding: 80px 0; }
+    .section:nth-of-type(even) { background: #ffffff; }
+    .section:nth-of-type(odd) { background: #f9fbfd; }
+    .section-title { font-size: 1.8rem; font-weight: 600; color: #0b2240; text-align: center; margin-bottom: 40px; position: relative; }
+    .section-title:after { content: ''; width: 60px; height: 4px; background: #ff7f50; display: block; margin: 12px auto 0; border-radius: 2px; }
 
     /* Features */
-    #features .features{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:30px; }
-    .feature{ flex:1 1 calc(33% - 30px); background:#fff; padding:30px 20px; border-radius:8px; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.1); transition:transform .3s,opacity .6s; opacity:0; }
-    .feature.visible{ opacity:1; }
-    .feature:hover{ transform:translateY(-8px); }
-    .feature img{ width:60px; height:60px; margin-bottom:20px; }
-    .feature p{ font-size:1rem; color:#333; }
+    #features .features { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; }
+    .feature { flex: 1 1 calc(33% - 30px); background: #fff; padding: 30px 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.1); transition: transform .3s, opacity .6s; opacity: 0; }
+    .feature.visible { opacity: 1; }
+    .feature:hover { transform: translateY(-8px); }
+    .feature img { width: 60px; height: 60px; margin-bottom: 20px; }
+    .feature p { font-size: 1rem; color: #333; }
 
     /* Steps */
-    .steps{ list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; max-width:700px; margin:0 auto; }
-    .steps li{ background:#fff; padding:20px; border-left:5px solid #ff7f50; border-radius:6px; font-size:1rem; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    .steps { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 700px; margin: 0 auto; }
+    .steps li { background: #fff; padding: 20px; border-left: 5px solid #ff7f50; border-radius: 6px; font-size: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
 
-    /* ... 后续版块样式不变 ... */
+    /* Recommendations */
+    .recommendations { background: #fff; padding: 60px 0; }
+    .recommendations .title { font-size: 1.6rem; text-align: center; color: #0b2240; margin-bottom: 40px; position: relative; }
+    .recommendations .title:after { content: ''; width: 50px; height: 3px; background: #ff7f50; display: block; margin: 12px auto 0; border-radius: 2px; }
+    .rec-list { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 30px; }
+    .rec-item { flex: 1 1 200px; background: #f9fbfd; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform .3s; }
+    .rec-item:hover { transform: translateY(-5px); }
+    .rec-item img { width: 60px; height: 60px; margin-bottom: 16px; }
+    .rec-item h4 { font-size: 1rem; margin-bottom: 8px; color: #0b2240; }
+    .rec-item p { font-size: 0.95rem; color: #415a77; }
+
+    /* Carousel */
+    .carousel { position: relative; overflow: hidden; }
+    .carousel-track { display: flex; transition: transform .5s ease; gap: 20px; }
+    .carousel-item { min-width: 280px; }
+    .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.8); border: none; padding: 8px; cursor: pointer; border-radius: 50%; }
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+
+    /* Footer */
+    footer { background: #ffffff; padding: 60px 0; text-align: center; }
+    footer .btn-primary { padding: 18px 44px; font-size: 1.1rem; }
+    footer .subtext { color: #7a7a7a; margin-top: 14px; font-size: 0.85rem; }
 
     /* Responsive */
-    @media (max-width:768px){ nav a{ margin-left:16px; font-size:0.9rem; } .feature, .card, .steps li{ flex:1 1 100%; } }
+    @media (max-width: 768px) { nav a { margin-left: 16px; font-size: 0.9rem; } .rec-list { flex-direction: column; align-items: center; } }
   </style>
 </head>
 <body>
@@ -75,12 +101,15 @@
       <nav>
         <a href="#features">Schmerzpunkte</a>
         <a href="#solutions">Strategien</a>
+        <a href="#recommendations">Empfehlungen</a>
+        <a href="#testimonials">Erfahrungsberichte</a>
         <a href="#cta">Jetzt beitreten</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
+  <!-- Hero -->
+  <section class="hero" id="hero">
     <div class="container">
       <h1>Risikominimierung bei Marktcrashs & Wertpapier-Top‑Empfehlungen</h1>
       <p>Erhalten Sie unsere 9‑Schritte‑Strategie zur Crash‑Absicherung und monatliche Top‑Aktien‑Tipps kostenlos.</p>
@@ -100,8 +129,73 @@
     </div>
   </section>
 
-    <!-- Testimonial Carousel -->
-  <section class="section" id="testimonials">
+  <!-- Features -->
+  <section id="features" class="section">
+    <div class="container">
+      <h2 class="section-title">Ihre Herausforderungen</h2>
+      <div class="features">
+        <div class="feature" data-observer>
+          <img src="icon-crash.png" alt="Crash-Risiko" />
+          <p>Erste Crash-Welle vernichtete 4 Jahre Gewinne in Tagen.</p>
+        </div>
+        <div class="feature" data-observer>
+          <img src="icon-stock.png" alt="Aktienauswahl" />
+          <p>Über 1500 Aktien – wo liegen versteckte Perlen?</p>
+        </div>
+        <div class="feature" data-observer>
+          <img src="icon-community.png" alt="Community" />
+          <p>Kein Austausch? Profitieren Sie von Experten‑Feedback.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section id="solutions" class="section">
+    <div class="container">
+      <h2 class="section-title">Unsere 9‑Schritte‑Absicherung</h2>
+      <ul class="steps">
+        <li>Gründliche Positionsanalyse</li>
+        <li>Schnelles Setzen von Stop‑Loss</li>
+        <li>Disziplinierte Umsetzung des Handelsplans</li>
+        <li>Portfoliodiversifikation</li>
+        <li>Feste Ein‑ und Ausstiegspunkte</li>
+        <li>Regelmäßiges Monitoring</li>
+        <li>Verzicht auf Hype‑Werte</li>
+        <li>Unabhängige Research‑Quellen</li>
+        <li>Emotionale Kontrolle</li>
+      </ul>
+      <div style="text-align:center; margin-top:30px;">      <a href="https://wa.me/IhreGruppenLink" class="btn-primary">PDF herunterladen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommendations -->
+  <section id="recommendations" class="recommendations">
+    <div class="container">
+      <div class="title">Empfohlene von Finanzexperten</div>
+      <div class="rec-list">
+        <div class="rec-item">
+          <img src="expert1.png" alt="Dr. Müller" />
+          <h4>Dr. Müller</h4>
+          <p>„Herausragende Insights und praxisnah.“</p>
+        </div>
+        <div class="rec-item">
+          <img src="expert2.png" alt="Prof. Schreiber" />
+          <h4>Prof. Schreiber</h4>
+          <p>„Unverzichtbar für seriöse Anleger.“</p>
+        </div>
+        <div class="rec-item">
+          <img src="expert3.png" alt="Frau Becker" />
+          <h4>Frau Becker</h4>
+          <p>„Fundierte Analysen und klare Strategien."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carousel Testimonials -->
+  <section id="testimonials" class="section">
     <div class="container">
       <h2 class="section-title">Erfahrungsberichte</h2>
       <div class="carousel">
@@ -111,7 +205,7 @@
             <cite>– Laura, Finanzanalystin</cite>
           </div>
           <div class="carousel-item testimonial">
-            <p>„Die monatlichen Tipps bieten echte Mehrwerte für mein Portfolio.“</p>
+            <p>„Die monatlichen Tipps bieten echte Mehrwerte für mein Portfolio."</p>
             <cite>– Thomas, Portfolio‑Manager</cite>
           </div>
           <div class="carousel-item testimonial">
@@ -125,7 +219,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer CTA -->
   <footer id="cta">
     <div class="container">
       <a href="https://wa.me/IhreGruppenLink" class="btn-primary">Jetzt beitreten</a>
@@ -133,9 +227,9 @@
     </div>
   </footer>
 
-  <!-- Scripts: Smooth scroll, active nav, intersection observer, back-to-top, carousel -->
+  <!-- Scripts -->
   <script>
-    // Active nav links
+    // Nav highlight
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a');
     window.addEventListener('scroll', () => {
@@ -149,49 +243,22 @@
         }
       });
     });
-
-    // Intersection Observer for animations
+    // IntersectionObserver
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.2 });
-    document.querySelectorAll('[data-observer]').forEach(el => observer.observe(el));
-
+      entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('visible'));
+    }, { threshold:0.2 });
+    document.querySelectorAll('[data-observer], .carousel-item').forEach(el => observer.observe(el));
     // Back to top
-    const backToTop = document.createElement('div');
-    backToTop.id = 'backToTop'; backToTop.textContent = '↑';
-    document.body.append(backToTop);
-    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    window.addEventListener('scroll', () => {
-      backToTop.style.display = window.scrollY > 400 ? 'block' : 'none';
-    });
-
+    const backToTop = document.createElement('div'); backToTop.id='backToTop'; backToTop.textContent='↑'; document.body.append(backToTop);
+    backToTop.onclick = () => window.scrollTo({ top:0, behavior:'smooth'});
+    window.addEventListener('scroll', () => backToTop.style.display = window.scrollY>400?'block':'none');
     // Carousel
-    const track = document.querySelector('.carousel-track');
-    const items = Array.from(track.children);
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    let currentIndex = 0;
-
-    function updateCarousel() {
-      const width = items[0].getBoundingClientRect().width;
-      track.style.transform = `translateX(-${currentIndex * (width + 20)}px)`;
-    }
-
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
-      updateCarousel();
-    });
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
-      updateCarousel();
-    });
-
+    const track = document.querySelector('.carousel-track'); const items = Array.from(track.children);
+    let currentIndex=0; const prevBtn=document.querySelector('.carousel-btn.prev'), nextBtn=document.querySelector('.carousel-btn.next');
+    function updateCarousel(){ const width=items[0].getBoundingClientRect().width+20; track.style.transform=`translateX(-${currentIndex*width}px)`; }
+    prevBtn.onclick = ()=>{ currentIndex = currentIndex>0?currentIndex-1:items.length-1; updateCarousel(); };
+    nextBtn.onclick = ()=>{ currentIndex = currentIndex<items.length-1?currentIndex+1:0; updateCarousel(); };
     window.addEventListener('resize', updateCarousel);
   </script>
-
 </body>
 </html>
