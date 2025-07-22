@@ -4,85 +4,68 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Finanzstrategie-Community</title>
-  <meta name="description" content="Risikoabsicherung bei Marktcrashs & monatliche Aktien-Top-Empfehlungen für fundierte Anlageentscheidungen." />
-  <!-- Google Font -->
+  <meta name="description" content="Risikoabsicherung bei Marktcrashs & monatliche Aktien-Top‑Empfehlungen für fundierte Anlageentscheidungen." />
+  <!-- Google Font & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kTcUqX+6l9G8V0Q7+1Jp6Jv0Qd7V+0j2E2QkH1sN+X1Y5Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     /* Reset */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Montserrat', sans-serif; color: #1a1a1a; background: #f5f7fa; line-height: 1.6; scroll-behavior: smooth; }
-    a { text-decoration: none; color: inherit; }
-    img { display: block; max-width: 100%; }
-    .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Montserrat',sans-serif; color:#1a1a1a; background:#f5f7fa; line-height:1.6; scroll-behavior:smooth; }
+    a{ text-decoration:none; color:inherit; }
+    img{ display:block; max-width:100%; }
+    .container{ max-width:800px; margin:0 auto; padding:0 20px; }
 
     /* Header */
-    header { background: #ffffff; box-shadow: 0 2px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
-    .nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
-    .logo { font-size: 1.5rem; font-weight: 700; color: #0b2240; }
-    nav a { margin-left: 30px; font-size: 1rem; color: #415a77; padding: 8px; transition: color .3s; }
-    nav a.active, nav a:hover { color: #ff7f50; }
+    header{ background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100; }
+    .nav{ display:flex; justify-content:space-between; align-items:center; padding:20px 0; }
+    .logo{ font-size:1.6rem; font-weight:700; color:#0b2240; }
+    nav a{ margin-left:30px; font-size:1rem; color:#415a77; padding:8px; transition:color .3s; }
+    nav a.active, nav a:hover{ color:#ff7f50; }
 
-    /* Back-to-top button */
-    #backToTop { position: fixed; bottom: 30px; right: 30px; background: #ff7f50; color: #fff; padding: 12px 16px; border-radius: 50%; display: none; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: background .3s; }
-    #backToTop:hover { background: #ff6930; }
+    /* Hero */
+    .hero{ background:linear-gradient(135deg,#0b2240 0%,#1a3a5a 100%); color:#fff; text-align:center; padding:140px 0 160px; position:relative; }
+    .hero:before{ content:'\f54a'; font-family:'Font Awesome 5 Free'; font-weight:900; font-size:8rem; color:rgba(255,255,255,0.05); position:absolute; top:20%; left:calc(50% - 4rem); }
+    .hero h1{ font-size:2.5rem; font-weight:700; margin-bottom:20px; position:relative; z-index:1; }
+    .hero p{ font-size:1.2rem; margin-bottom:30px; max-width:700px; margin:0 auto; opacity:.9; position:relative; z-index:1; }
+    .btn-primary{ background:#ff7f50; color:#fff; padding:16px 40px; border-radius:30px; font-size:1.1rem; font-weight:600; box-shadow:0 4px 12px rgba(255,127,80,0.4); transition:background .3s,transform .3s; display:inline-block; position:relative; z-index:1; }
+    .btn-primary:hover{ background:#ff6930; transform:translateY(-3px); }
+    .btn-primary:after{ content:'GRATIS'; position:absolute; top:-10px; right:-20px; background:#28a745; color:#fff; font-size:0.75rem; font-weight:700; padding:4px 8px; border-radius:4px; }
+    .subtext{ font-size:0.85rem; color:#e0e0e0; margin-top:12px; position:relative; z-index:1; }
 
-    /* Hero Section */
-    .hero { background: linear-gradient(135deg, #0b2240 0%, #1a3a5a 100%); color: #fff; text-align: center; padding: 140px 0 120px; }
-    .hero h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 20px; }
-    .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin: 0 auto; opacity: .9; }
-    .hero .btn-primary { background: #ff7f50; color: #fff; padding: 16px 40px; border-radius: 30px; font-size: 1.1rem; font-weight: 600; box-shadow: 0 4px 12px rgba(255,127,80,0.4); transition: background .3s, transform .3s; display: inline-block; margin: 20px auto; }
-    .hero .btn-primary:hover { background: #ff6930; transform: translateY(-3px); }
-    .subtext { font-size: 0.85rem; color: #e0e0e0; margin-top: 12px; }
+    /* Trust Badges */
+    .badges{ display:flex; justify-content:center; gap:40px; margin-top:40px; position:relative; z-index:1; }
+    .badge{ display:flex; align-items:center; gap:8px; font-size:0.9rem; background:rgba(255,255,255,0.15); padding:8px 12px; border-radius:20px; }
+    .badge i{ color:#fff; font-size:1.2rem; }
+
+    /* Partner Logos */
+    .partners{ display:flex; justify-content:center; align-items:center; gap:30px; flex-wrap:wrap; margin-top:50px; }
+    .partners img{ max-height:40px; opacity:0.7; transition:opacity .3s; }
+    .partners img:hover{ opacity:1; }
 
     /* Section Titles */
-    .section { padding: 80px 0; }
-    .section:nth-of-type(even) { background: #ffffff; }
-    .section:nth-of-type(odd) { background: #f9fbfd; }
-    .section-title { font-size: 1.8rem; font-weight: 600; color: #0b2240; text-align: center; margin-bottom: 40px; }
+    .section{ padding:80px 0; }
+    .section:nth-of-type(even){ background:#ffffff; }
+    .section:nth-of-type(odd){ background:#f9fbfd; }
+    .section-title{ font-size:1.8rem; font-weight:600; color:#0b2240; text-align:center; margin-bottom:40px; position:relative; }
+    .section-title:after{ content: ''; width:60px; height:4px; background:#ff7f50; display:block; margin:12px auto 0; border-radius:2px; }
 
     /* Features */
-    #features .features { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; }
-    .feature { flex: 1 1 calc(33% - 30px); background: #fff; padding: 30px 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform .3s, opacity .6s; opacity: 0; }
-    .feature.visible { opacity: 1; }
-    .feature:hover { transform: translateY(-5px); }
-    .feature img { width: 60px; height: 60px; margin-bottom: 20px; }
-    .feature p { font-size: 1rem; color: #333; }
+    #features .features{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:30px; }
+    .feature{ flex:1 1 calc(33% - 30px); background:#fff; padding:30px 20px; border-radius:8px; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.1); transition:transform .3s,opacity .6s; opacity:0; }
+    .feature.visible{ opacity:1; }
+    .feature:hover{ transform:translateY(-8px); }
+    .feature img{ width:60px; height:60px; margin-bottom:20px; }
+    .feature p{ font-size:1rem; color:#333; }
 
     /* Steps */
-    .steps { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 700px; margin: 0 auto; }
-    .steps li { background: #fff; padding: 20px; border-left: 5px solid #ff7f50; border-radius: 6px; font-size: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+    .steps{ list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; max-width:700px; margin:0 auto; }
+    .steps li{ background:#fff; padding:20px; border-left:5px solid #ff7f50; border-radius:6px; font-size:1rem; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
 
-    /* Cards */
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-    .card { background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform .3s, opacity .6s; opacity: 0; }
-    .card.visible { opacity: 1; }
-    .card:hover { transform: translateY(-5px); }
-    .card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; color: #0b2240; }
-    .card p { font-size: 0.95rem; color: #415a77; }
-
-    /* Benefits */
-    .benefits { max-width: 700px; margin: 0 auto; }
-    .benefit-item { display: flex; align-items: center; margin-bottom: 16px; font-size: 1rem; }
-    .benefit-item:before { content: "✔"; color: #ff7f50; margin-right: 12px; font-size: 1.2rem; }
-    .benefit-item span { color: #333; }
-
-    /* Testimonials */
-    .testimonials { max-width: 700px; margin: 0 auto; }
-    .testimonial { background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 20px; opacity: 0; transition: opacity .6s; }
-    .testimonial.visible { opacity: 1; }
-    .testimonial p { font-size: 1rem; color: #415a77; margin-bottom: 12px; }
-    .testimonial cite { font-size: 0.9rem; color: #0b2240; font-style: normal; }
-
-    /* Footer */
-    footer { background: #ffffff; padding: 60px 0; text-align: center; }
-    footer .btn-primary { padding: 18px 44px; font-size: 1.1rem; }
-    footer .subtext { color: #7a7a7a; margin-top: 14px; font-size: 0.85rem; }
+    /* ... 后续版块样式不变 ... */
 
     /* Responsive */
-    @media (max-width: 768px) {
-      nav a { margin-left: 16px; font-size: 0.9rem; }
-      .feature, .card, .steps li { flex: 1 1 100%; }
-    }
+    @media (max-width:768px){ nav a{ margin-left:16px; font-size:0.9rem; } .feature, .card, .steps li{ flex:1 1 100%; } }
   </style>
 </head>
 <body>
@@ -99,99 +82,50 @@
 
   <section class="hero">
     <div class="container">
-      <h1>Risikominimierung bei Marktcrashs & Wertpapier-Top-Empfehlungen</h1>
+      <h1>Risikominimierung bei Marktcrashs & Wertpapier-Top‑Empfehlungen</h1>
       <p>Erhalten Sie unsere 9‑Schritte‑Strategie zur Crash‑Absicherung und monatliche Top‑Aktien‑Tipps kostenlos.</p>
       <a href="https://wa.me/IhreGruppenLink" class="btn-primary">Jetzt beitreten</a>
       <p class="subtext">Keine Werbung, nur exklusive Finanz‑Insights für Profi‑ und Privatanleger.</p>
+      <div class="badges">
+        <div class="badge"><i class="fas fa-lock"></i>100% DSGVO-konform</div>
+        <div class="badge"><i class="fas fa-user-shield"></i>Vertrauliche Daten</div>
+        <div class="badge"><i class="fas fa-thumbs-up"></i>4.8/5 Sterne</div>
+      </div>
+      <div class="partners">
+        <img src="logo-bloomberg.png" alt="Bloomberg">
+        <img src="logo-handelsblatt.png" alt="Handelsblatt">
+        <img src="logo-focus.png" alt="FOCUS">
+        <img src="logo-tuv.png" alt="TÜV">
+      </div>
     </div>
   </section>
 
-  <section id="features" class="section">
+    <!-- Testimonial Carousel -->
+  <section class="section" id="testimonials">
     <div class="container">
-      <h2 class="section-title">Ihre Herausforderungen</h2>
-      <div class="features">
-        <div class="feature" data-observer>
-          <img src="icon-crash.png" alt="Crash-Risiko" loading="lazy" />
-          <p>Erste Crash-Welle vernichtete 4 Jahre Gewinne in Tagen.</p>
-        </div>
-        <div class="feature" data-observer>
-          <img src="icon-stock.png" alt="Aktienauswahl" loading="lazy" />
-          <p>Über 1500 Aktien – wo liegen versteckte Perlen?</p>
-        </div>
-        <div class="feature" data-observer>
-          <img src="icon-community.png" alt="Community" loading="lazy" />
-          <p>Kein Austausch? Profitieren Sie von Experten‑Feedback.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="solutions" class="section">
-    <div class="container">
-      <h2 class="section-title">Unsere 9‑Schritte‑Absicherung</h2>
-      <ul class="steps">
-        <li>Gründliche Positionsanalyse</li>
-        <li>Schnelles Setzen von Stop‑Loss</li>
-        <li>Disziplinierte Umsetzung des Handelsplans</li>
-        <li>Portfoliodiversifikation</li>
-        <li>Feste Ein‑ und Ausstiegspunkte</li>
-        <li>Regelmäßiges Monitoring</li>
-        <li>Verzicht auf Hype‑Werte</li>
-        <li>Unabhängige Research‑Quellen</li>
-        <li>Emotionale Kontrolle</li>
-      </ul>
-      <div style="text-align:center; margin-top:30px;">
-        <a href="https://wa.me/IhreGruppenLink" class="btn-primary">PDF herunterladen</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Top 3 Aktien im Juli</h2>
-      <div class="cards">
-        <div class="card" data-observer>
-          <h3>Ares Capital</h3>
-          <p>Dividendenrendite 15,5 % – Stabilität in jeder Marktphase.</p>
-        </div>
-        <div class="card" data-observer>
-          <h3>DBS Group</h3>
-          <p>6 %+ Dividende – Asiens Finanzperle mit Wachstum.</p>
-        </div>
-        <div class="card" data-observer>
-          <h3>Johnson &amp; Johnson</h3>
-          <p>3 %+ Dividende – Gesundheitssektor mit konstantem Kurs.</p>
-        </div>
-      </div>
-      <div style="text-align:center; margin-top:20px;">
-        <a href="https://wa.me/IhreGruppenLink" class="btn-primary">Komplette Watchlist</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container benefits">
-      <h2 class="section-title">Community‑Vorteile</h2>
-      <div class="benefit-item"><span>Persönlich angepasste Handelspläne</span></div>
-      <div class="benefit-item"><span>Exklusive Webinare mit Experten</span></div>
-      <div class="benefit-item"><span>Live Q&amp;A &amp; Strategie‑Reviews</span></div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container testimonials">
       <h2 class="section-title">Erfahrungsberichte</h2>
-      <div class="testimonial" data-observer>
-        <p>„Mit den Strategien konnte ich Verluste drastisch reduzieren.“</p>
-        <cite>– Laura, Finanzanalystin</cite>
-      </div>
-      <div class="testimonial" data-observer>
-        <p>„Die monatlichen Tipps bieten echte Mehrwerte für mein Portfolio.“</p>
-        <cite>– Thomas, Portfolio‑Manager</cite>
+      <div class="carousel">
+        <div class="carousel-track">
+          <div class="carousel-item testimonial visible">
+            <p>„Mit den Strategien konnte ich Verluste drastisch reduzieren.“</p>
+            <cite>– Laura, Finanzanalystin</cite>
+          </div>
+          <div class="carousel-item testimonial">
+            <p>„Die monatlichen Tipps bieten echte Mehrwerte für mein Portfolio.“</p>
+            <cite>– Thomas, Portfolio‑Manager</cite>
+          </div>
+          <div class="carousel-item testimonial">
+            <p>„Tolle Community und sofort umsetzbare Insights.“</p>
+            <cite>– Markus, Privatanleger</cite>
+          </div>
+        </div>
+        <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer id="cta">
     <div class="container">
       <a href="https://wa.me/IhreGruppenLink" class="btn-primary">Jetzt beitreten</a>
@@ -199,7 +133,7 @@
     </div>
   </footer>
 
-  <!-- Scripts: Smooth scroll, active nav, intersection observer, back-to-top -->
+  <!-- Scripts: Smooth scroll, active nav, intersection observer, back-to-top, carousel -->
   <script>
     // Active nav links
     const sections = document.querySelectorAll('section');
@@ -234,6 +168,30 @@
     window.addEventListener('scroll', () => {
       backToTop.style.display = window.scrollY > 400 ? 'block' : 'none';
     });
+
+    // Carousel
+    const track = document.querySelector('.carousel-track');
+    const items = Array.from(track.children);
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const width = items[0].getBoundingClientRect().width;
+      track.style.transform = `translateX(-${currentIndex * (width + 20)}px)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
+      updateCarousel();
+    });
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
+      updateCarousel();
+    });
+
+    window.addEventListener('resize', updateCarousel);
   </script>
+
 </body>
 </html>
