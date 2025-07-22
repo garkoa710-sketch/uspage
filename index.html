@@ -22,14 +22,15 @@
     /* Hero Section */
     .hero { background: #0d1b2a; color: #fff; text-align: center; padding: 120px 0 80px; }
     .hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
-    .hero p { font-size: 1.1rem; margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .hero p { font-size: 1.1rem; margin-bottom: 24px; max-width: 600px; margin: 0 auto; }
     .btn-primary { background: #ff7f50; color: #fff; padding: 14px 32px; border-radius: 32px; font-size: 1rem; font-weight: 600; transition: background .3s, transform .3s; }
     .btn-primary:hover { background: #ff6930; transform: translateY(-2px); }
     .subtext { font-size: 0.8rem; color: #dcdcdc; margin-top: 8px; }
 
     /* Features */
-    .features { display: flex; justify-content: space-between; margin: 60px 0; }
-    .feature { width: 30%; text-align: center; }
+    #features { background: #fff; padding: 60px 0; }
+    .features { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; }
+    .feature { flex: 1 1 calc(33% - 24px); text-align: center; }
     .feature img { width: 64px; height: 64px; margin-bottom: 12px; }
     .feature p { font-size: 0.95rem; color: #1a1a1a; }
 
@@ -60,13 +61,14 @@
     .testimonial cite { font-size: 0.85rem; color: #1a1a1a; font-style: normal; }
 
     /* Footer */
-    footer { text-align: center; padding: 60px 0; }
+    footer { text-align: center; padding: 60px 0; background: #fff; }
     footer .btn-primary { padding: 16px 36px; font-size: 1.05rem; }
     footer .subtext { color: #a0a0a0; margin-top: 12px; font-size: 0.8rem; }
 
     @media (max-width: 600px) {
-      .features, .steps, .cards { display: block; }
-      .feature, .card, .steps li { width: 100%; }
+      .feature { flex: 1 1 100%; }
+      .steps { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -91,18 +93,22 @@
     </div>
   </section>
 
-  <section id="features" class="container features">
-    <div class="feature">
-      <img src="icon-crash.png" alt="Crash-Risiko" />
-      <p>Erste Crash-Welle vernichtete 4 Jahre Gewinne in wenigen Tagen.</p>
-    </div>
-    <div class="feature">
-      <img src="icon-stock.png" alt="Aktienauswahl" />
-      <p>Über 1500 Aktien: Wie erkennt man High-Potential-Werte?</p>
-    </div>
-    <div class="feature">
-      <img src="icon-community.png" alt="Community" />
-      <p>Fehlender Expertenaustausch: Setzen Sie auf valide Strategien.</p>
+  <section id="features">
+    <div class="container">
+      <div class="features">
+        <div class="feature">
+          <img src="icon-crash.png" alt="Crash-Risiko" />
+          <p>Erste Crash-Welle vernichtete 4 Jahre Gewinne in wenigen Tagen.</p>
+        </div>
+        <div class="feature">
+          <img src="icon-stock.png" alt="Aktienauswahl" />
+          <p>Über 1500 Aktien: Wie erkennt man High-Potential-Werte?</p>
+        </div>
+        <div class="feature">
+          <img src="icon-community.png" alt="Community" />
+          <p>Fehlender Expertenaustausch: Setzen Sie auf valide Strategien.</p>
+        </div>
+      </div>
     </div>
   </section>
 
